@@ -1,3 +1,16 @@
+---
+icon: lucide/book-open-check
+---
+
+## Requirements for this course
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/): Python project manager
+- [Positron](https://positron.posit.co/download.html): code editor
+
+!!! tip
+
+      Installation instructions are available in the first session materials.
+
 ## Session 1 - Definitions of data and AI
 
 - Definitions: big data, smart data, open data
@@ -6,7 +19,7 @@
 - Richness of data and where to collect them: internal data, external data, open data, panel and tracking data
 - From data to action: machine learning, natural language processing, computer vision
 
-[Go to materials of this session](definition_of_data_and_ai.md){ .md-button .md-button--primary }
+[Go to materials of this session](./definition_of_data_and_ai/setup.md){ .md-button .md-button--primary }
 
 ## Session 2 - Preparing data
 
