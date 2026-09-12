@@ -63,10 +63,6 @@ toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 
 [project.extra]
-alternate = [
-  { name = "English", link = "/en/", lang = "en" },
-  { name = "French", link = "/fr/", lang = "fr" },
-]
 generator = false
 
 [project.markdown_extensions]
