@@ -3,3 +3,7 @@ h3,
 h4 {
   margin-top: 3em !important;
 }
+
+.md-footer-meta {
+  display: none;
+}
