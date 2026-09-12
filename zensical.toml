@@ -4,10 +4,15 @@ site_name = "Documentation"
 site_description = "Teaching materials of Joseph Barbier"
 site_author = "Joseph Barbier"
 nav = [
-  { "Courses" = "index.md" },
+  { "All courses" = "index.md" },
   { "Data Analytics & AI" = [
-    { "Course" = "kedge_data_analytics_and_AI/index.md" },
+    { "Syllabus" = "kedge_data_analytics_and_AI/syllabus.md" },
     { "Definitions of data and AI" = "kedge_data_analytics_and_AI/definition_of_data_and_ai.md" },
+    { "Preparing data" = "kedge_data_analytics_and_AI/preparing_data.md" },
+    { "Analyzing data" = "kedge_data_analytics_and_AI/analyzing_data.md" },
+    { "Text mining" = "kedge_data_analytics_and_AI/text_mining.md" },
+    { "Presenting data and ethical issues" = "kedge_data_analytics_and_AI/presenting_data_and_ethical_issues.md" },
+    { "Group projects" = "kedge_data_analytics_and_AI/group_projects.md" },
   ] },
 ]
 
