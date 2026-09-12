@@ -1,1 +1,0 @@
-# All available courses

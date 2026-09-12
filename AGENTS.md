@@ -1,0 +1,1 @@
+- Never use title casing in headings. Example: do this "Introduction to data science" instead of "Introduction to Data Science".
