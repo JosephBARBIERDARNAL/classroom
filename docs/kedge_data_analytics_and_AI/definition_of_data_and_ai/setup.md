@@ -91,16 +91,6 @@ print(pd.__version__)
 
 You have succeeded when the cell prints a Python path, a Python version, and a pandas version without an error.
 
-!!! success "Setup checkpoint"
-
-    Check each item before continuing:
-
-    - [ ] Positron opens.
-    - [ ] `uv --version` prints a version.
-    - [ ] The `luma-marketing-data` project contains a `.venv` environment.
-    - [ ] The notebook is using the `.venv` kernel.
-    - [ ] The environment check runs successfully.
-
 ??? info "Troubleshooting"
 
     **`uv` is not found:** close and reopen the terminal, then try `uv --version` again. If it still fails, use the official `uv` installation page or ask for help.
