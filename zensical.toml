@@ -10,6 +10,7 @@ nav = [
     { "Definitions of data and AI" = [
       { "Set up Positron and uv" = "kedge_data_analytics_and_AI/definition_of_data_and_ai/setup.md" },
       { "Definitions" = "kedge_data_analytics_and_AI/definition_of_data_and_ai/definitions.md" },
+      { "Generative AI" = "kedge_data_analytics_and_AI/definition_of_data_and_ai/generative_ai.md" },
       { "Other" = "kedge_data_analytics_and_AI/definition_of_data_and_ai/other.md" },
     ] },
     { "Preparing data" = [
