@@ -2,68 +2,42 @@
 icon: lucide/database
 ---
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+!!! abstract "Indigo"
 
-## The running case: Luma's refill launch
+    For this course, we'll assume that we work for the marketing department of Indigo, a company selling organic cleaning products. Indigo wants to launch a new refillable shampoo product.
 
-Throughout the lesson, imagine that **Luma**, a fictional personal-care brand, is launching a refillable shampoo product. The marketing team wants to answer questions such as:
+We want to answer questions such as:
 
-- Who might be interested in the product?
+- Who might be interested in the product in the current customer base?
 - Which message and channel should we use?
-- Did the launch increase sales?
+- How should we brand that product?
+- How should we price that product?
 - What are customers saying about the product?
-- Can we improve the next campaign without invading people's privacy?
+- Did the launch increase sales?
+- What does that teach us about launching a new product?
 
-There is no single "marketing dataset" that answers all of these questions. The useful data depends on the decision we are trying to make.
+## Data
 
-## 1. Start with the decision, not the dataset
+We have access to the following datasets:
 
-Data is a recorded representation of an observation, event, measurement, opinion, or interaction. It can be a number, a date, a sentence, an image, a sound recording, a location, or a combination of these.
+- **Sales:** each transaction, products bought, quantity, customer ID, price, and date
+- **Marketing campaigns:** campaigns sent to customers, channel (email, ads), message, and whether customers clicked/purchased
+- **Product reviews:** customer ratings and written reviews about products
+- **Website analytics:** customer visits, where they came from, products viewed, and whether they added to cart/purchased
 
-For example, each of these can be data when it is recorded with enough context:
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-| Observation               | Possible context                                       |
-| ------------------------- | ------------------------------------------------------ |
-| `€24.90`                  | Price of one product, in euros, on a particular date   |
-| `2026-09-12`              | Date of a purchase, survey response, or campaign event |
-| "The scent is too strong" | A customer review, in its original language            |
-| A product photograph      | Image posted by a customer or taken in a store         |
-| 3 clicks                  | Clicks on a campaign link during a defined period      |
-
-The value of a data point depends on its context. A number without a unit, date, definition, or source is difficult to interpret.
-
-### From data to action
-
-Data does not automatically become a good decision. A useful chain is:
-
-```mermaid
-flowchart LR
-    A[Recorded data] --> B[Information]
-    B --> C[Insight]
-    C --> D[Decision]
-    D --> E[Action]
-    E --> F[Outcome and new data]
-```
-
-- **Data**: 18% of recipients clicked an email.
-- **Information**: The click rate was higher than the previous product email.
-- **Insight**: The refill explanation may have made the message more relevant.
-- **Decision**: Test a clearer refill explanation in the next campaign.
-- **Action**: Create two versions of the email and compare them fairly.
-
-An insight is an interpretation, not a fact hiding inside the data. It should be possible to explain how the evidence supports it and what remains uncertain.
-
-### Pair activity: what data would Luma need?
+### Pair activity: what data would Indigo need?
 
 Choose one of the case questions and work with a partner.
 
@@ -151,7 +125,7 @@ Quality is not the same as perfection. A dataset is fit for purpose when its lim
 
 Data work is collaborative. Job titles vary between organisations, and one person may perform several roles in a small company.
 
-| Role                              | Main responsibility                                                                      | Example question from Luma                                          |
+| Role                              | Main responsibility                                                                      | Example question from Indigo                                        |
 | --------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | **Chief Data Officer (CDO)**      | Connects data strategy, governance, and business priorities                              | Are we building responsible data capabilities?                      |
 | **Data engineer**                 | Builds and maintains systems that collect, move, and store data                          | Can campaign, order, and website data arrive reliably in one place? |
