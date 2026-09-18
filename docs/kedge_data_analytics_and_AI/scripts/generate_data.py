@@ -2,6 +2,7 @@ import math
 import random
 from datetime import date, timedelta
 from pathlib import Path
+from typing import TypedDict
 
 import polars as pl
 
@@ -31,7 +32,33 @@ TRAFFIC_SOURCE_WEIGHTS = [0.27, 0.19, 0.18, 0.14, 0.16, 0.06]
 CUSTOMER_SEGMENTS = ["Value", "Regular", "Premium"]
 CUSTOMER_SEGMENT_WEIGHTS = [0.35, 0.48, 0.17]
 
-CAMPAIGNS = [
+
+class Campaign(TypedDict):
+    campaign_id: str
+    campaign_name: str
+    channel: str
+    message: str
+    start_month: int
+    end_month: int
+
+
+class Customer(TypedDict):
+    customer_id: str
+    segment: str
+    engagement: float
+    price_sensitivity: float
+
+
+class Product(TypedDict):
+    product_id: str
+    product_name: str
+    category: str
+    base_price: float
+    quality: float
+    popularity: float
+
+
+CAMPAIGNS: list[Campaign] = [
     {
         "campaign_id": "CMP01",
         "campaign_name": "New Year Reset",
@@ -132,7 +159,7 @@ def seasonal_multiplier(d: date) -> float:
     return 1 + yearly_wave + holiday_effect
 
 
-customers = []
+customers: list[Customer] = []
 for i in range(1, N_CUSTOMERS + 1):
     segment = rng.choices(CUSTOMER_SEGMENTS, weights=CUSTOMER_SEGMENT_WEIGHTS, k=1)[0]
     customers.append(
@@ -159,7 +186,7 @@ product_adjectives = [
 ]
 product_nouns = ["Serum", "Bottle", "Mat", "Lamp", "Bag", "Cream", "Band", "Organizer"]
 
-products = []
+products: list[Product] = []
 for i in range(1, N_PRODUCTS + 1):
     category = CATEGORIES[(i - 1) % len(CATEGORIES)]
     adjective = product_adjectives[(i - 1) % len(product_adjectives)]
@@ -175,7 +202,7 @@ for i in range(1, N_PRODUCTS + 1):
         }
     )
 
-product_weights = [product["popularity"] for product in products]
+product_weights: list[float] = [product["popularity"] for product in products]
 
 
 sales_rows = []
