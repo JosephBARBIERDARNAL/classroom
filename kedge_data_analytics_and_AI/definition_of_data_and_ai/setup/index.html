@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="zensical-0.0.61">
+      <meta name="generator" content="zensical-0.0.62">
     
     
       
@@ -433,6 +433,8 @@
       
         
       
+        
+      
     
     
     
@@ -591,10 +593,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-install-one-package-and-verify-the-project" class="md-nav__link">
+  <a href="#step-4-install-one-package-and-verify-it-can-be-used" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Step 4: install one package and verify the project
+        Step 4: install one package and verify it can be used
       </span>
     </span>
   </a>
@@ -627,6 +629,35 @@
     
   
   Definitions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generative_ai/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Generative AI
 
     
   </span>
@@ -1244,10 +1275,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-install-one-package-and-verify-the-project" class="md-nav__link">
+  <a href="#step-4-install-one-package-and-verify-it-can-be-used" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Step 4: install one package and verify the project
+        Step 4: install one package and verify it can be used
       </span>
     </span>
   </a>
@@ -1342,6 +1373,8 @@
       
         
       
+        
+      
     
     
     
@@ -1389,11 +1422,7 @@
 </tr>
 <tr>
 <td><code>uv</code></td>
-<td>A tool that installs Python versions and packages and keeps a project’s environment organised</td>
-</tr>
-<tr>
-<td>Virtual environment</td>
-<td>A separate project space for Python and its packages</td>
+<td>A tool that installs Python versions and packages and keeps a project's environment organised</td>
 </tr>
 </tbody>
 </table>
@@ -1404,57 +1433,58 @@
 <li>Install and open Positron.</li>
 </ol>
 <h3 id="step-2-check-or-install-uv">Step 2: check or install <code>uv</code><a class="headerlink" href="#step-2-check-or-install-uv" title="Permanent link">&para;</a></h3>
-<p>Positron can offer to install <code>uv</code> while creating a Python environment. We will still check that the command is available.</p>
-<ol>
-<li>In Positron, open <strong>View &gt; Terminal</strong>.</li>
-<li>Type the command below and press Enter. Do not type the <code>$</code> or <code>PS&gt;</code> symbols shown in some tutorials.</li>
-</ol>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv --version
-</span></code></pre></div>
-<p>If a version number appears, <code>uv</code> is ready. If the terminal says that <code>uv</code> is not found, use the official installer below, then close and reopen the terminal.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS or Linux</label><label for="__tabbed_1_2">Windows PowerShell</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Mac/Linux</label><label for="__tabbed_1_2">Windows PowerShell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<p>Open the <strong>Terminal</strong> application and paste:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
+<p>Open the <strong>PowerShell</strong> application and paste:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">astral</span><span class="p">.</span><span class="n">sh</span><span class="p">/</span><span class="n">uv</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<p>The <a href="https://docs.astral.sh/uv/getting-started/installation/">official <code>uv</code> installation page</a> lists alternative installation methods if these commands are blocked by your school or company computer.</p>
+<p>To verify it's actually installed:</p>
+<ol>
+<li>In Positron, open <strong>View &gt; Terminal</strong>.</li>
+<li>Type the command below and press Enter.</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv --version
+</span></code></pre></div>
+<p>If a version number appears, <code>uv</code> is ready.</p>
+<p>The <a href="https://docs.astral.sh/uv/getting-started/installation/">official <code>uv</code> installation page</a> lists alternative installation methods.</p>
 <div class="admonition note">
 <p class="admonition-title">If installation is restricted</p>
-<p>You do not need administrator rights for every installation method. If your network blocks the installer, continue with a neighbour and tell the instructor. Do not repeatedly retry a command that your computer is blocking.</p>
+<p>You do not need administrator rights for every installation method. If your network blocks the installer, continue with a neighbour and tell the instructor.</p>
 </div>
 <h3 id="step-3-create-a-project-environment">Step 3: create a project environment<a class="headerlink" href="#step-3-create-a-project-environment" title="Permanent link">&para;</a></h3>
 <p>The Positron menus may look slightly different across versions, but the workflow is the same.</p>
 <ol>
 <li>In Positron, choose <strong>New &gt; New Folder from Template</strong>.</li>
 <li>Select <strong>Python Project</strong>.</li>
-<li>Choose a location such as your Documents folder and name the project <code>luma-marketing-data</code>.</li>
+<li>Choose a location such as your Documents folder and name the project <code>luma-data</code>.</li>
 <li>When asked, create a <code>pyproject.toml</code> file.</li>
 <li>Choose <strong>Create a new virtual environment</strong>.</li>
-<li>Choose <strong><code>uv</code></strong> as the environment provider.</li>
-<li>Name the environment <code>.venv</code>.</li>
+<li>Choose <strong><code>uv</code></strong> as the environment provider (default)'.</li>
+<li>Name the environment <code>.venv</code> (default).</li>
 <li>Choose the latest stable Python version offered by Positron, then select <strong>Create</strong>.</li>
 </ol>
-<p>Positron may download Python through <code>uv</code> if Python is not already installed. This is expected. A new <code>.venv</code> folder should appear in the project.</p>
-<h3 id="step-4-install-one-package-and-verify-the-project">Step 4: install one package and verify the project<a class="headerlink" href="#step-4-install-one-package-and-verify-the-project" title="Permanent link">&para;</a></h3>
+<p>Positron may download Python through <code>uv</code> if Python is not already installed. This is expected. A new <code>.venv</code> folder should appear in the project, as well as a <code>pyproject.toml</code>.</p>
+<h3 id="step-4-install-one-package-and-verify-it-can-be-used">Step 4: install one package and verify it can be used<a class="headerlink" href="#step-4-install-one-package-and-verify-it-can-be-used" title="Permanent link">&para;</a></h3>
 <p>We will install <code>pandas</code>, a common package for working with tables. You are not expected to learn pandas today; installing one package verifies that <code>uv</code> and the environment are connected.</p>
 <ol>
-<li>Make sure the Positron terminal is open in the <code>luma-marketing-data</code> project.</li>
-<li>Run:</li>
+<li>Make sure the Positron terminal is open in the <code>luma-data</code> project.</li>
+<li>Go to <strong>Terminal</strong>:</li>
 </ol>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uv<span class="w"> </span>add<span class="w"> </span>pandas
 </span></code></pre></div>
-<p>The command adds the package to the project and updates the project’s environment. It should also record the dependency in <code>pyproject.toml</code>.</p>
+<p>The command adds the package to the project and updates the project's environment. It should also record the dependency in <code>pyproject.toml</code>.</p>
 <ol>
-<li>Choose <strong>New &gt; New File &gt; Jupyter Notebook</strong>.</li>
-<li>In the notebook toolbar, select the kernel or interpreter and choose the project environment ending in <code>.venv</code>.</li>
-<li>Add a code cell with the following environment check, then run it.</li>
+<li>Go to <strong>Console</strong>.</li>
+<li>Copy the following code block, paste it and hit enter:</li>
 </ol>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1468,9 +1498,9 @@
 <summary>Troubleshooting</summary>
 <p><strong><code>uv</code> is not found:</strong> close and reopen the terminal, then try <code>uv --version</code> again. If it still fails, use the official <code>uv</code> installation page or ask for help.</p>
 <p><strong>The <code>.venv</code> environment does not appear:</strong> open the Command Palette and run <strong>Interpreter: Discover All Interpreters</strong>, then select the <code>.venv</code> environment.</p>
-<p><strong>The notebook uses the wrong environment:</strong> click the kernel selector at the top of the notebook and choose the interpreter inside your project’s <code>.venv</code> folder.</p>
+<p><strong>The notebook uses the wrong environment:</strong> click the kernel selector at the top of the notebook and choose the interpreter inside your project's <code>.venv</code> folder.</p>
 <p><strong>The package installation fails:</strong> check your internet connection and the spelling of <code>uv add pandas</code>. If the computer is managed by your school or company, ask the instructor rather than changing security settings yourself.</p>
-<p>For more detail, see Positron’s <a href="https://positron.posit.co/python-installations.html">Python installation and environment guide</a> and <a href="https://positron.posit.co/tutorial-get-started-ipynb.html">first Python notebook tutorial</a>.</p>
+<p>For more detail, see Positron's <a href="https://positron.posit.co/python-installations.html">Python installation and environment guide</a> and <a href="https://positron.posit.co/tutorial-get-started-ipynb.html">first Python notebook tutorial</a>.</p>
 </details>
 
 
@@ -1574,7 +1604,7 @@
       <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.sections","navigation.top","navigation.tracking","search.highlight","navigation.prune"],"redirect":null,"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.df5d1f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
       
     
   </body>
