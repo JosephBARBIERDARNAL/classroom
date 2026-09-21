@@ -68,13 +68,13 @@ Positron may download Python through `uv` if Python is not already installed. Th
 
 ### Step 4: install one package and verify it can be used
 
-We will install `pandas`, a common package for working with tables. You are not expected to learn pandas today; installing one package verifies that `uv` and the environment are connected.
+We will install `polars`, a common package for working with tables.
 
 1. Make sure the Positron terminal is open in the `luma-data` project.
 2. Go to **Terminal**:
 
 ```sh
-uv add pandas
+uv add polars
 ```
 
 The command adds the package to the project and updates the project's environment. It should also record the dependency in `pyproject.toml`.
@@ -84,14 +84,14 @@ The command adds the package to the project and updates the project's environmen
 
 ```python
 import sys
-import pandas as pd
+import polars as pd
 
 print(sys.executable)
 print(sys.version)
 print(pd.__version__)
 ```
 
-You have succeeded when the cell prints a Python path, a Python version, and a pandas version without an error.
+You have succeeded when the cell prints a Python path, a Python version, and a polars version without an error.
 
 ??? info "Troubleshooting"
 
@@ -101,6 +101,6 @@ You have succeeded when the cell prints a Python path, a Python version, and a p
 
     **The notebook uses the wrong environment:** click the kernel selector at the top of the notebook and choose the interpreter inside your project's `.venv` folder.
 
-    **The package installation fails:** check your internet connection and the spelling of `uv add pandas`. If the computer is managed by your school or company, ask the instructor rather than changing security settings yourself.
+    **The package installation fails:** check your internet connection and the spelling of `uv add polars`. If the computer is managed by your school or company, ask the instructor rather than changing security settings yourself.
 
     For more detail, see Positron's [Python installation and environment guide](https://positron.posit.co/python-installations.html) and [first Python notebook tutorial](https://positron.posit.co/tutorial-get-started-ipynb.html).

@@ -31,7 +31,7 @@ In practice, we often separate tabular and non-tabular data.
 
 **Big data** describes data whose scale, speed, diversity, or complexity creates challenges for traditional tools and processes. A common way to remember the challenges is the "3 Vs" (sometimes 5):
 
-| V            | Meaning                              | Luma example                                    |
+|              | Meaning                              | Example                                         |
 | ------------ | ------------------------------------ | ----------------------------------------------- |
 | **Volume**   | A lot of records                     | Millions of website events                      |
 | **Velocity** | Data arrives quickly or continuously | Live clicks during a product launch             |

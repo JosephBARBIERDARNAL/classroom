@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 0 20px;
+        background: #111;
+        color: #eee;
+      }
+
+      textarea {
+        width: 100%;
+        height: 140px;
+        padding: 14px;
+        margin-top: 20px;
+        font: inherit;
+        font-size: 16px;
+        color: #eee;
+        background: #1c1c1c;
+        border: 1px solid #444;
+        border-radius: 8px;
+        resize: vertical;
+      }
+
+      button {
+        margin-top: 12px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 0;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      #status {
+        margin: 20px 0 10px;
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      #output {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        min-height: 150px;
+        padding: 16px;
+        background: #1c1c1c;
+        border: 1px solid #333;
+        border-radius: 8px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Change the question below with whatever you want</h3>
+
+    <textarea id="prompt">Which one is better: cheese or pesto sauce?</textarea>
+
+    <button id="generate" disabled>Loading model...</button>
+
+    <div id="status">Initializing...</div>
+
+    <div id="output"></div>
+
+    <script type="module">
+      const status = document.getElementById("status");
+      const button = document.getElementById("generate");
+      const prompt = document.getElementById("prompt");
+      const output = document.getElementById("output");
+
+      const workerCode = `
+      import {
+        pipeline,
+        env,
+        TextStreamer
+      } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0";
+
+      env.allowLocalModels = false;
+      env.useBrowserCache = true;
+
+      let generator;
+
+      async function loadModel() {
+        generator = await pipeline(
+          "text-generation",
+          "onnx-community/SmolLM2-135M-Instruct-ONNX-MHA",
+          {
+            device: "wasm",
+            dtype: "q4",
+
+            progress_callback: (progress) => {
+              self.postMessage({
+                type: "progress",
+                progress
+              });
+            }
+          }
+        );
+
+        self.postMessage({
+          type: "ready"
+        });
+      }
+
+      self.onmessage = async (event) => {
+        if (event.data.type !== "generate")
+          return;
+
+        const prompt = event.data.prompt;
+
+        const streamer = new TextStreamer(
+          generator.tokenizer,
+          {
+            skip_prompt: true,
+            skip_special_tokens: true,
+
+            callback_function: (text) => {
+              self.postMessage({
+                type: "token",
+                text
+              });
+            }
+          }
+        );
+
+        try {
+          const messages = [
+            {
+              role: "system",
+              content: "You are a helpful assistant."
+            },
+            {
+              role: "user",
+              content: prompt
+            }
+          ];
+
+          await generator(messages, {
+            max_new_tokens: 300,
+            do_sample: true,
+            temperature: 0.7,
+            top_p: 0.9,
+            streamer
+          });
+
+          self.postMessage({
+            type: "done"
+          });
+
+        } catch (error) {
+
+          self.postMessage({
+            type: "error",
+            error: error.message
+          });
+
+        }
+      };
+
+      loadModel().catch(error => {
+        self.postMessage({
+          type: "error",
+          error: error.message
+        });
+      });
+    `;
+
+      const blob = new Blob([workerCode], { type: "text/javascript" });
+
+      const workerURL = URL.createObjectURL(blob);
+
+      const worker = new Worker(workerURL, { type: "module" });
+
+      let start;
+      let generatedCharacters = 0;
+
+      worker.onmessage = (event) => {
+        const data = event.data;
+
+        if (data.type === "progress") {
+          const p = data.progress;
+
+          if (p.status === "progress" && p.progress != null) {
+            status.textContent =
+              "Loading model: " + p.progress.toFixed(1) + "%";
+          }
+        } else if (data.type === "ready") {
+          status.textContent = "Ready: WASM model loaded in Web Worker.";
+
+          button.textContent = "Generate";
+          button.disabled = false;
+        } else if (data.type === "token") {
+          output.textContent += data.text;
+
+          generatedCharacters += data.text.length;
+        } else if (data.type === "done") {
+          const seconds = (performance.now() - start) / 1000;
+
+          status.textContent =
+            "Finished in " +
+            seconds.toFixed(1) +
+            "s · " +
+            generatedCharacters +
+            " characters";
+
+          button.disabled = false;
+        } else if (data.type === "error") {
+          console.error(data.error);
+
+          status.textContent = "Error";
+
+          output.textContent += "\\n\\nError: " + data.error;
+
+          button.disabled = false;
+        }
+      };
+
+      button.addEventListener("click", () => {
+        output.textContent = "";
+
+        generatedCharacters = 0;
+
+        start = performance.now();
+
+        status.textContent = "Generating on CPU...";
+
+        button.disabled = true;
+
+        worker.postMessage({
+          type: "generate",
+          prompt: prompt.value,
+        });
+      });
+    </script>
+  </body>
+</html>
