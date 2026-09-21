@@ -1482,11 +1482,11 @@
 <li>Choose a location such as your Documents folder and name the project <code>luma-data</code>.</li>
 <li>When asked, create a <code>pyproject.toml</code> file.</li>
 <li>Choose <strong>Create a new virtual environment</strong>.</li>
-<li>Choose <strong><code>uv</code></strong> as the environment provider (default)'.</li>
+<li>Choose <strong><code>uv</code></strong> as the environment provider (default).</li>
 <li>Name the environment <code>.venv</code> (default).</li>
 <li>Choose the latest stable Python version offered by Positron, then select <strong>Create</strong>.</li>
 </ol>
-<p>Positron may download Python through <code>uv</code> if Python is not already installed. This is expected. A new <code>.venv</code> folder should appear in the project, as well as a <code>pyproject.toml</code>.</p>
+<p>Positron may download Python through <code>uv</code> if Python is not already installed. This is expected. A new <code>.venv</code> folder should appear in the project, along with a <code>pyproject.toml</code> file.</p>
 <h3 id="step-4-install-one-package-and-verify-it-can-be-used">Step 4: install one package and verify it can be used<a class="headerlink" href="#step-4-install-one-package-and-verify-it-can-be-used" title="Permanent link">&para;</a></h3>
 <p>We will install <code>polars</code>, a common package for working with tables.</p>
 <ol>
@@ -1498,7 +1498,7 @@
 <p>The command adds the package to the project and updates the project's environment. It should also record the dependency in <code>pyproject.toml</code>.</p>
 <ol>
 <li>Go to <strong>Console</strong>.</li>
-<li>Copy the following code block, paste it and hit enter:</li>
+<li>Copy the following code block, paste it, and press Enter:</li>
 </ol>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1507,7 +1507,7 @@
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </span></code></pre></div>
-<p>You have succeeded when the cell prints a Python path, a Python version, and a polars version without an error.</p>
+<p>You have succeeded when the cell prints a Python path, a Python version, and a polars version without errors.</p>
 <details class="info">
 <summary>Troubleshooting</summary>
 <p><strong><code>uv</code> is not found:</strong> close and reopen the terminal, then try <code>uv --version</code> again. If it still fails, use the official <code>uv</code> installation page or ask for help.</p>

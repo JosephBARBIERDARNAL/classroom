@@ -1396,13 +1396,13 @@
   <h1 id="__skip">Generative AI</h1>
 
 <h2 id="transformers">Transformers<a class="headerlink" href="#transformers" title="Permanent link">&para;</a></h2>
-<p>In 2017, Google researchers publish a now extremely famous paper named <a href="https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Attention is all you need</a> presenting the <strong>Transformer architecture</strong>.</p>
+<p>In 2017, Google researchers published a now extremely famous paper titled <a href="https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Attention is all you need</a>, presenting the <strong>Transformer architecture</strong>.</p>
 <iframe src="https://ig.ft.com/generative-ai/" width="100%" height="700"></iframe>
 
 <p>Source: <a href="https://ig.ft.com/generative-ai/">Generative AI exists because of the transformer</a></p>
 <h2 id="an-llm-isnt-a-database">An LLM isn't a database<a class="headerlink" href="#an-llm-isnt-a-database" title="Permanent link">&para;</a></h2>
-<p>It might feel natural to compare an LLM to a search tool like Google, but they are very different. An LLM is litteraly one (or multiple) files stored somewhere. It contains between <strong>dozens of millions</strong> (see example below) to <strong>hundreds of billions</strong> (Claude, ChatGPT, etc)</p>
-<p>Here is an AI running completly "offline". Once it says <em>"Ready: ...."</em>, you can:</p>
+<p>It might feel natural to compare an LLM to a search tool like Google, but they are very different. An LLM is literally one (or multiple) files stored somewhere. It contains between <strong>dozens of millions</strong> of parameters (see example below) and <strong>hundreds of billions</strong> of parameters (Claude, ChatGPT, etc.).</p>
+<p>Here is an AI running completely "offline". Once it says <em>"Ready: ...."</em>, you can:</p>
 <ul>
 <li>turn off your wifi</li>
 <li>try to chat with it</li>
@@ -1411,34 +1411,34 @@
 <p class="admonition-title">Warning</p>
 <ul>
 <li>Don't refresh the page, otherwise it won't work.</li>
-<li>This might slowdown your computer a little bit, but there are no risks.</li>
+<li>This might slow down your computer a little bit, but there are no risks.</li>
 </ul>
 </div>
 <iframe src=".././local_llm.html" width="100%" height="600"></iframe>
 
 <blockquote>
-<p>Everything you asked the AI here is 100% private, nobody, even myself, could ever know what you'll ask it.</p>
+<p>Everything you ask the AI here is 100% private. Nobody, not even me, could ever know what you ask it.</p>
 </blockquote>
-<p>As you make some tests, you'll see that:</p>
+<p>As you run some tests, you'll see that:</p>
 <ul>
 <li>answers are kind of weird and not very clear</li>
 <li>it often stops mid-sentence</li>
 </ul>
-<p>The latter is because, at each step when making predictions, computes <strong>what is the next word in that sentence</strong> (or token as we should say). Its reasonning is basically something like this:</p>
+<p>The latter is because, at each step when making predictions, the model computes <strong>what the next word in that sentence will be</strong> (or token, as we should say). Its reasoning is basically something like this:</p>
 <ul>
-<li>Given all tokens so far, it computes a <strong>probability distribution over the possible next tokens</strong>. In the sentence <em><mark>"I hope I'll have a good [...]"</mark></em>, the LLM tries to figure out what <em><mark>"[...]"</mark></em> could be? It's likely to predict something like: 40% chance to be <em><mark>"day"</mark></em>, 30% change to be <em><mark>"morning"</mark></em>, etc.</li>
-<li>A <strong>token is selected</strong> from that distribution: could be the one with the highest chance (e.g., <em><mark>"day"</mark></em>) or some more sophisticated method.</li>
+<li>Given all tokens so far, it computes a <strong>probability distribution over the possible next tokens</strong>. In the sentence <em><mark>"I hope I'll have a good [...]"</mark></em>, the LLM tries to figure out what <em><mark>"[...]"</mark></em> could be. It is likely to predict something like a 40% chance of <em><mark>"day"</mark></em>, a 30% chance of <em><mark>"morning"</mark></em>, etc.</li>
+<li>A <strong>token is selected</strong> from that distribution: it could be the one with the highest chance (e.g., <em><mark>"day"</mark></em>) or some more sophisticated method.</li>
 <li>That token is <strong>appended to the context</strong>: the sentence becomes <em><mark>"I hope I'll have a good day [...]"</mark></em>.</li>
 <li>And the process <strong>repeats</strong>.</li>
 <li>Generation stops when the model produces a <strong>special end-of-sequence (EOS) token</strong>, or when some external stopping condition is reached (such as a maximum token limit).</li>
 </ul>
 <h2 id="before-gen-ai">Before Gen AI<a class="headerlink" href="#before-gen-ai" title="Permanent link">&para;</a></h2>
-<p>As we said before, there was "AI" long before "Generative AI", and non-generative AI still heavily exist today. The process is exactly the same:</p>
+<p>As we said before, there was "AI" long before "Generative AI", and non-generative AI still exists today. The process is exactly the same:</p>
 <ul>
-<li>gather a lot of data. In practice it's often just users data.</li>
-<li>train an AI model on it with a specific task.</li>
+<li>gather a lot of data. In practice, it's often just user data.</li>
+<li>train an AI model on it for a specific task.</li>
 <li>evaluate that model</li>
-<li>make inference with it</li>
+<li>make inferences with it</li>
 </ul>
 <p>The list could be much longer, but the following are the most common use cases:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">fraud detection</label><label for="__tabbed_1_2">recommendation systems</label><label for="__tabbed_1_3">medical image analysis</label><label for="__tabbed_1_4">churn prediction</label></div>
@@ -1447,7 +1447,7 @@
 <p><em>Detects suspicious transactions or unusual behavior that may indicate fraud, such as stolen credit cards or unauthorized payments.</em></p>
 </div>
 <div class="tabbed-block">
-<p><em>Predicts what content or products a user is most likely to be interested in based on their behavior, preferences, and similar users. This is used for example by youtube, tiktok, instagram, vinted, ...</em></p>
+<p><em>Predicts what content or products a user is most likely to be interested in based on their behavior, preferences, and similar users. This is used, for example, by YouTube, TikTok, Instagram, Vinted, ...</em></p>
 </div>
 <div class="tabbed-block">
 <p><em>Analyzes medical images such as X-rays, MRIs, or CT scans to help identify abnormalities, diseases, or other relevant patterns.</em></p>
@@ -1457,14 +1457,14 @@
 </div>
 </div>
 </div>
-<p>Most of those usages fall into the <strong>2 main categories</strong>:</p>
+<p>Most of those uses fall into the <strong>two main categories</strong>:</p>
 <ul>
-<li>regression: predict a number (e.g., how much ice creams we need at this store next week)</li>
-<li>classification: predict a category (e.g., does this patient has a tumor or not?) or a probability (e.g., what are the odd of this patient having a tumor?)</li>
+<li>regression: predict a number (e.g., how much ice cream we need at this store next week)</li>
+<li>classification: predict a category (e.g., does this patient have a tumor or not?) or a probability (e.g., what are the odds of this patient having a tumor?)</li>
 </ul>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>In your opinion, an LLM does regression or classification?</p>
+<p>In your opinion, does an LLM do regression or classification?</p>
 </div>
 <h2 id="going-further">Going further:<a class="headerlink" href="#going-further" title="Permanent link">&para;</a></h2>
 <ul>
