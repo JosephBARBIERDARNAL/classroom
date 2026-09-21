@@ -21,9 +21,9 @@ We want to answer questions such as:
 We have access to the following datasets:
 
 - **Sales:** each transaction, products bought, quantity, customer ID, price, and date
-- **Marketing campaigns:** campaigns sent to customers, channel (email, ads), message, and whether customers clicked/purchased
+- **Marketing campaigns:** campaigns sent to customers, channel (email, ads), message, and whether customers clicked or purchased
 - **Product reviews:** customer ratings and written reviews about products
-- **Website analytics:** customer visits, where they came from, products viewed, and whether they added to cart/purchased
+- **Website analytics:** customer visits, where they came from, products viewed, and whether they added items to their cart or purchased them
 
 <br>
 <br>
@@ -79,7 +79,7 @@ Some data is **semi-structured**: it has labels or a loose organisation but not 
 
 | Source            | What it means                                             | Marketing example                                                        | Questions to ask                                                              |
 | ----------------- | --------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| **Internal data** | Collected by or for the organisation                      | Orders, CRM records, campaign spend, customer-service contacts           | Was it collected for this purpose? Is it accurate and consented?              |
+| **Internal data** | Collected by or for the organisation                      | Orders, CRM records, campaign spend, customer-service contacts           | Was it collected for this purpose? Is it accurate and was it collected with consent? |
 | **External data** | Comes from outside the organisation                       | A media platform report, a research panel, a partner, or a market report | What is the provider's method and incentive? Can the definitions be compared? |
 | **Open data**     | External data available for reuse under stated conditions | Public population, weather, transport, or economic statistics            | What licence, geography, date, and limitations apply?                         |
 
@@ -108,7 +108,7 @@ For each question, choose one or more suitable data sources. Then write one limi
 
 ### Data quality: fit for purpose
 
-Before using data, check at least these dimensions:
+Before using data, check at least the following dimensions:
 
 - **Accuracy:** Does it represent what it claims to represent?
 - **Completeness:** Are important values missing?

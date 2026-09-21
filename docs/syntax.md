@@ -4,12 +4,12 @@ icon: lucide/rocket
 
 # Get started
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+For full documentation, visit [zensical.org](https://zensical.org/docs/).
 
 ## Commands
 
 * [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
+* [`zensical serve`][serve] - Start a local web server
 * [`zensical build`][build] - Build your site
 
   [new]: https://zensical.org/docs/usage/new/
@@ -52,7 +52,7 @@ greet("Python")
 
 1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
 
-    Code annotations allow to attach notes to lines of code.
+    Code annotations allow you to attach notes to lines of code.
 
 Code can also be highlighted inline: `#!python print("Hello, Python!")`.
 
@@ -128,7 +128,7 @@ $$
 !!! warning "Needs configuration"
     Note that MathJax is included via a `script` tag on this page and is not
     configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
+    in pages that do not need it. See the documentation for details on how
     to configure it on all your pages if they are more Maths-heavy than these
     simple starter pages.
 

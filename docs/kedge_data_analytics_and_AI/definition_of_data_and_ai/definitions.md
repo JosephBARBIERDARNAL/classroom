@@ -12,9 +12,9 @@ In practice, we often separate tabular and non-tabular data.
 
     ==Can fit into a table or a spreadsheet==
 
-    - **Numerical**: prices, temperatures, revenue, sensor measurements, ages, time-spent, number of click, etc.
+    - **Numerical**: prices, temperatures, revenue, sensor measurements, ages, time spent, number of clicks, etc.
     - **Categorical**: country, product category, customer type, yes/no values, etc.
-    - **Time-series**: stock prices, website traffic, heart-rate measurements, IoT readings over time.
+    - **Time-series**: stock prices, website traffic, heart rate measurements, IoT readings over time.
     - **Graph/network**: social connections, relationships between companies, transportation networks.
     - **Location/spatial**: GPS coordinates, maps, geographic regions.
 
@@ -22,7 +22,7 @@ In practice, we often separate tabular and non-tabular data.
 
     ==Everything else==
 
-    - **Text**: emails, reviews, documents, social-media posts, support conversations.
+    - **Text**: emails, reviews, documents, social media posts, support conversations.
     - **Images**: photographs, medical scans, satellite imagery, handwritten digits.
     - **Audio**: speech recordings, music, environmental sounds.
     - **Video**: surveillance footage, sports recordings, driving footage.
@@ -58,9 +58,9 @@ For a campaign, a small table containing recent, consented, relevant customer se
 
 !!! tip "Open data in France"
 
-    In France, a lot of the data is made public via the [datagouv platform](https://www.data.gouv.fr/). There is a lot of things you can find: businesses and economy, real estate and urban planning, geography and addresses, transport and mobility, energy and environment, health, education, employment and population, agriculture and food, public administration and finance, elections and public life, culture, security.
+    In France, a lot of data is made public via the [data.gouv.fr platform](https://www.data.gouv.fr/). There are a lot of things you can find: businesses and the economy, real estate and urban planning, geography and addresses, transport and mobility, energy and the environment, health, education, employment and population, agriculture and food, public administration and finance, elections and public life, culture, and security.
 
-## Data in AI VS AI
+## Data in AI vs AI
 
 What we call "AI" often means generative AI, but AI is much more than that.
 
@@ -85,13 +85,13 @@ flowchart TB
 
 Today, most people doing data analytics aren't doing AI, but all AI researchers/engineers are working with data.
 
-The rise of Gen AI has been possible mostly **because of compute availabilities**:
+The rise of Gen AI has been possible mostly **because of compute availability**:
 
-![](https://upload.wikimedia.org/wikipedia/commons/0/00/Moore%27s_Law_Transistor_Count_1970-2020.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled)
+![A graph showing the growth in transistor counts from 1970 to 2020, illustrating Moore's law](https://upload.wikimedia.org/wikipedia/commons/0/00/Moore%27s_Law_Transistor_Count_1970-2020.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled)
 
-We're now using extremely high amount of compute, and even more each year:
+We're now using an extremely high amount of compute, and even more each year:
 
-![](https://upload.wikimedia.org/wikipedia/commons/4/4b/Ai_training_compute_doubling_v2.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled)
+![A graph showing that the amount of compute used to train AI models doubles over time](https://upload.wikimedia.org/wikipedia/commons/4/4b/Ai_training_compute_doubling_v2.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled)
 
 
 ## Going further:

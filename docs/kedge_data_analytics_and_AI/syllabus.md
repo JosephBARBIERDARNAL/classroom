@@ -14,7 +14,7 @@ icon: lucide/book-open-check
 ## Session 1 - Definitions of data and AI
 
 - Definitions: big data, smart data, open data
-- Understanding the data players within the company: Chief Data Officer (CDO), Data Engineers, Data Scientists, Analysts, Statisticians, Data Translators, Data Protection Officer
+- Understanding the data roles within the company: Chief Data Officer (CDO), Data Engineers, Data Scientists, Analysts, Statisticians, Data Translators, Data Protection Officer
 - Types of data: structured data and their applications, unstructured data and their applications
 - Richness of data and where to collect them: internal data, external data, open data, panel and tracking data
 - From data to action: machine learning, natural language processing, computer vision
@@ -32,7 +32,7 @@ icon: lucide/book-open-check
 
 ## Session 3 - Analyzing data
 
-- Data mining techniques according to the company’s goal and type of data: prediction and classification algorithms, linear regression, logistic regression, decision trees, random forests, K-nearest neighbor
+- Data mining techniques according to the company’s goal and type of data: prediction and classification algorithms, linear regression, logistic regression, decision trees, random forests, K-nearest neighbors
 - Practical exercises with predictive marketing use cases: price prediction, consumer segmentation, recommendation, personalization
 
 [Go to materials of this session](analyzing_data/other.md){ .md-button .md-button--primary }

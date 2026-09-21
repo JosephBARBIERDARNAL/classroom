@@ -60,11 +60,11 @@ The Positron menus may look slightly different across versions, but the workflow
 3. Choose a location such as your Documents folder and name the project `luma-data`.
 4. When asked, create a `pyproject.toml` file.
 5. Choose **Create a new virtual environment**.
-6. Choose **`uv`** as the environment provider (default)'.
+6. Choose **`uv`** as the environment provider (default).
 7. Name the environment `.venv` (default).
 8. Choose the latest stable Python version offered by Positron, then select **Create**.
 
-Positron may download Python through `uv` if Python is not already installed. This is expected. A new `.venv` folder should appear in the project, as well as a `pyproject.toml`.
+Positron may download Python through `uv` if Python is not already installed. This is expected. A new `.venv` folder should appear in the project, along with a `pyproject.toml` file.
 
 ### Step 4: install one package and verify it can be used
 
@@ -80,7 +80,7 @@ uv add polars
 The command adds the package to the project and updates the project's environment. It should also record the dependency in `pyproject.toml`.
 
 3. Go to **Console**.
-4. Copy the following code block, paste it and hit enter:
+4. Copy the following code block, paste it, and press Enter:
 
 ```python
 import sys
@@ -91,7 +91,7 @@ print(sys.version)
 print(pd.__version__)
 ```
 
-You have succeeded when the cell prints a Python path, a Python version, and a polars version without an error.
+You have succeeded when the cell prints a Python path, a Python version, and a polars version without errors.
 
 ??? info "Troubleshooting"
 
